@@ -46,7 +46,7 @@ def ask_translation(chat_id, user_words, words_left, correct_words, words_number
         bot.register_next_step_handler_by_chat_id(chat_id, check_translation, translation, words_left, correct_words, words_number)
     else:
         bot.send_message(chat_id, f"Урок закончен! Правильных ответов: {correct_words} из {words_number} возможных.")
-
+#Проверим сообщение пользователя
 def check_translation(message, expected_translation, words_left, correct_words, words_number):
     user_translation = message.text.strip().lower()
     if user_translation == expected_translation.lower():
